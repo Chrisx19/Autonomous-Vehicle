@@ -1,7 +1,7 @@
 # Auto-Vehicle
 Building an Autonomous Vehicles from scratch with concepts of Mechanical, Electrical, and Software integration.
 
-##This is a class project of 6 members on a team where we built an Autonomous Car for our class competition.
+## This is a class project of 6 members on a team where we built an Autonomous Car for our class competition.
           
 **Processors**: Raspberry Pi(High Level Controls) & STM32(Low Level Controls)
 
