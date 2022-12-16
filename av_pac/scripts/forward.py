@@ -15,12 +15,14 @@ class Rpi(object):
 
         joy_val_drive = joy_msg.axes[1]
         joy_val_turn = joy_msg.axes[3]
-
-        duty = int(joy_val_drive * 63)
-        servo = int(joy_val_turn * 700)
-
-        vel.linear.x = duty
-        vel.angular.z = servo
+        
+        if (joy.buttons[0]):
+            vel.linear.x = 63
+            vel.angular.z = 0
+        if (joy.buttons[1]):
+            vel.angular.z = 0
+        
+#         servo = 0
         self.cmd_vel_pub.publish(vel)
 
 if __name__ == "__main__":
