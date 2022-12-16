@@ -11,7 +11,6 @@ class Rpi(object):
 #         self.joy_sub = rospy.Subscriber("/joy", Joy, self.joy_cb)
 
     def forward(self):
-        vel = Twist()
 
         vel.linear.x = 63
         vel.angular.z = 0
