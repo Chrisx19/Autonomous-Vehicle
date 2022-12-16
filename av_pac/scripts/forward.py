@@ -22,7 +22,6 @@ class Rpi(object):
         if (joy.buttons[1]):
             vel.angular.z = 0
         
-#         servo = 0
         self.cmd_vel_pub.publish(vel)
 
 if __name__ == "__main__":
