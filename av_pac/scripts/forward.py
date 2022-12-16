@@ -12,15 +12,11 @@ class Rpi(object):
 
     def joy_cb(self, joy_msg):
         vel = Twist()
-
-        joy_val_drive = joy_msg.axes[1]
-        joy_val_turn = joy_msg.axes[3]
         
-        if (joy.buttons[0]):
-            vel.linear.x = 63
-            vel.angular.z = 0
-        if (joy.buttons[1]):
-            vel.angular.z = 0
+        vel.linear.x = 63
+        vel.angular.z = 0
+        if (joy.buttons[0] == 0):
+            vel.linear.x = 0
         
         self.cmd_vel_pub.publish(vel)
 
