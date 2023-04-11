@@ -15,13 +15,16 @@ class Rpi(object):
 
         joy_val_drive = joy_msg.axes[1]
         joy_val_turn = joy_msg.axes[3]
+        en_button = joy_msg.buttons[5]
 
         duty = int(joy_val_drive * 63)
         servo = int(joy_val_turn * 700)
 
         vel.linear.x = duty
         vel.angular.z = servo
-        self.cmd_vel_pub.publish(vel)
+        
+        if (en_button > 0):
+            self.cmd_vel_pub.publish(vel)
 
 if __name__ == "__main__":
     rospy.init_node("Rpi_node", anonymous = False)
