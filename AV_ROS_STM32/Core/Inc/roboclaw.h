@@ -6,13 +6,11 @@
 #include <stdint.h>
 #include <stdarg.h>
 
-
-
 #define MAXRETRY  2
 
 class RoboClaw {
     public:
-	    uint16_t crc;
+	    	uint16_t crc;
 		uint32_t timeout;
 
 		UART_HandleTypeDef *hserial;
